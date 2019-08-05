@@ -1,0 +1,28 @@
+ 
+<!-- <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+        Id: <input type="text" [(ngModel)]="this.id" name="id" ngModel>
+       <input type="submit" value="Search">
+       </form> -->
+       <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+        category: <select name="category"  [(ngModel)]="this.category" ngModel>
+                <option>select category</option>
+             <option *ngFor="let c of ca" >{{c}}</option>
+             </select>
+       <input type="submit" value="Search">
+       </form>
+
+       
+<table border="1">
+        <tr>
+        <th>Id</th> 
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        </tr>
+        <tr *ngFor="let produ of Producttt">
+        <td>{{produ.id}}</td>
+        <td>{{produ.name}}</td>
+        <td>{{produ.price}}</td>
+        <td>{{produ.category}}</td>
+        </tr>
+        </table>

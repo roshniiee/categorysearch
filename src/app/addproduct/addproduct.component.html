@@ -1,0 +1,11 @@
+<form #proform="ngForm" (ngSubmit)="add(proform.value)"><br>
+   Id: <input type="text" name="id" ngModel><br>
+   Name: <input type="text" name="name" ngModel><br>
+  Price: <input type="text" name="price" ngModel><br>
+   category: <select name="category" ngModel>
+      <option>select category</option>
+   <option *ngFor="let c of category" >{{c}}</option>
+   </select>
+   <input type="submit" value="Submit" >
+
+</form>

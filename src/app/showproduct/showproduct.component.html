@@ -1,0 +1,33 @@
+<table border="2px">
+  <tr>
+      <td (click)="sort('id')">Id</td>
+      <td (click)="sort('name')">Name</td>
+      <td (click)="sort('price')">Price</td>
+      <td (click)="sort('category')">Category</td>
+      <td>Options</td>
+  </tr>
+   
+ 
+    
+    <tr *ngFor="let p of proarr|sort:column:order">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.category}}</td>
+        <td><button (click)="delete(p)">Delete</button></td>
+        <td><button (click)="update(p)">Update</button></td>
+    </tr>
+</table>
+<div *ngIf=!updateboo>
+<form #updateform="ngForm" (ngSubmit)="Updatedata(updateform.value)">
+        Id: <input type="text" name="id" [(ngModel)]="this.id" ngModel><br>
+        Name: <input type="text" name="name"  [(ngModel)]="this.name" ngModel><br>
+       Price: <input type="text" name="price"  [(ngModel)]="this.price" ngModel><br>
+        category: <select name="category"  [(ngModel)]="this.category" ngModel>
+           <option>select category</option>
+        <option *ngFor="let c of categoryy" >{{c}}</option>
+        </select>
+        <input type="submit" value="Submit" >
+     
+</form>
+</div>
